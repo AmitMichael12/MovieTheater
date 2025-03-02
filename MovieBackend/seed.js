@@ -1,7 +1,10 @@
 const mongoose = require("mongoose");
 const Screening = require("./screeningModel");
+require('dotenv').config()
 
-const mongoURI = "mongodb+srv://roeyk70:123ad123ad@movietheater.1vfsp.mongodb.net/?retryWrites=true&w=majority&appName=MovieTheater"; // Replace with your actual MongoDB URI
+
+
+const mongoURI = process.env.MONGO_URI;
 
 mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => {
