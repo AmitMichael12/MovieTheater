@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const Screening = require("./screeningModel");
 
-const mongoURI = "mongodb+srv://roeyk70:123ad123ad@movietheater.1vfsp.mongodb.net/?retryWrites=true&w=majority&appName=MovieTheater";
+const mongoURI = process.env.MONGO_URI;
 
 mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => {
